@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   title = 'event-manager';
 
   public loggedIn = false;
+  public loaded = false;
 
   constructor(
     private authService: AuthService,
@@ -25,8 +26,9 @@ export class AppComponent implements OnInit {
 
   checkUserLogin() {
     this.authService.session('data').subscribe(
-      (sessionRequest: Session) => {
-        this.authService.setLocalSession(sessionRequest);
+      async (sessionRequest: Session) => {
+        await this.authService.setLocalSession(sessionRequest);
+        this.loaded = true;
         if(sessionRequest.loggedIn) {
           this.loggedIn = true;
         } else {
