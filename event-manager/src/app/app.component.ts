@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Session } from './dtos/auth/session';
-import { ActivatedRoute } from '@angular/router';
 import cfg from './config.json';
 
 @Component({
@@ -14,10 +13,10 @@ export class AppComponent implements OnInit {
 
   public loggedIn = false;
   public loaded = false;
+  public sideNavOpen = false;
 
   constructor(
-    private authService: AuthService,
-    private router: ActivatedRoute,
+    private authService: AuthService
   ){}
 
   ngOnInit() {
@@ -32,16 +31,14 @@ export class AppComponent implements OnInit {
         if(sessionRequest.loggedIn) {
           this.loggedIn = true;
         } else {
-          this.router.data.subscribe(
-            data => {
-              if(!data["public"]) {
-                window.location.href = cfg.domain.auth;
-              }
-            }
-          );
+          window.location.href = cfg.domain.auth;
         }
 
       }
     )
+  }
+
+  sideNavToggle(nav: boolean) {
+    this.sideNavOpen = nav;
   }
 }
