@@ -1,3 +1,6 @@
 {
-    "api": "https://api.enwys.jpromi.com/"
+    "domain": {
+        "api": "https://api.enwys.jpromi.com/",
+        "auth": "https://auth.enwys.jpromi.com/"
+    }
 }
