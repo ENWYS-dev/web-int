@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Session } from 'src/app/dtos/auth/session';
+import cfg from '../../../config.json'
 
 @Component({
   selector: 'app-nav-top',
@@ -9,6 +9,10 @@ import { Session } from 'src/app/dtos/auth/session';
 export class NavTopComponent implements OnInit {
 
   @Input() appComponen: any = <any>{};
+
+  public links = {
+    'logout': cfg.domain.auth + 'logout'
+  }
 
   public navProfileSettings = false;
   public session = {
