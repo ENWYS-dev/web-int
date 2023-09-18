@@ -30,6 +30,6 @@ export class AuthService {
   setLocalSession(session : Session) {
     localStorage.setItem('username', session.username);
     localStorage.setItem('firstname', session.firstname);
-    localStorage.setItem('lastnamename', session.lastname);
+    localStorage.setItem('lastname', session.lastname);
   }
 }
