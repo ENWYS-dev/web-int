@@ -1,0 +1,36 @@
+<!-- 
+    user settings
+    name
+ -->
+
+<nav>
+    <div class="left">
+        <img src="./assets/logo/Enwys_in_E&MS_weiß.svg">
+    </div>
+
+    <div class="right">
+        <span class="profile" (click)="this.toggleProfile()">
+            <img src="https://picsum.photos/300/300">
+            <p>{{ session.username }}</p>
+        </span>
+
+        <div class="profileSettings" *ngIf="this.navProfileSettings">
+            <div class="header">
+                <img src="https://picsum.photos/300/300">
+                <div class="text">
+                    <h2>{{ session.username }}</h2>
+                    <p>Admin</p>
+                </div>
+            </div>
+
+            <a>
+                <mat-icon>logout</mat-icon>
+                Logout
+            </a>
+        </div>
+
+        <span class="closeBanner" *ngIf="this.navProfileSettings" (click)="this.toggleProfile()">
+
+        </span>
+    </div>
+</nav>
