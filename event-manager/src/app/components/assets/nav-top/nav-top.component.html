@@ -14,12 +14,11 @@
             <p>{{ session.username }}</p>
         </span>
 
-        <div class="profileSettings" *ngIf="this.navProfileSettings">
+        <div [ngClass]="{profileSettings: true, disabled: !this.navProfileSettings}">
             <div class="header">
                 <img src="https://picsum.photos/300/300">
                 <div class="text">
                     <h2>{{ session.username }}</h2>
-                    <p>Admin</p>
                 </div>
             </div>
 
@@ -29,7 +28,7 @@
             </a>
         </div>
 
-        <span class="closeBanner" *ngIf="this.navProfileSettings" (click)="this.toggleProfile()">
+        <span [ngClass]="{closeBanner: true, disabled: !this.navProfileSettings}" (click)="this.toggleProfile()">
 
         </span>
     </div>
