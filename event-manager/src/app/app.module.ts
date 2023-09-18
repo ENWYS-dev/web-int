@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './components/assets/nav/nav.component';
+import { NavTopComponent } from './components/assets/nav-top/nav-top.component';
+import { NavSideComponent } from './components/assets/nav-side/nav-side.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavComponent,
+    NavTopComponent,
+    NavSideComponent,
   ],
   imports: [
     BrowserModule,
