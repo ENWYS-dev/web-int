@@ -11,7 +11,6 @@ nav {
     .left {
         padding-left: 2rem;
         display: flex;
-        justify-content: center;
         align-items: center;
 
         img {
@@ -24,6 +23,7 @@ nav {
         align-items: center;
         margin-left: auto;
         padding-right: 6vw;
+        width: fit-content;
 
         .profile {
             height: 100%;
@@ -33,8 +33,8 @@ nav {
 
             img {
                 border-radius: 100rem;
-                height: 100%;
-                width: 100%;
+                height: 2rem;
+                aspect-ratio: 1/1;
                 object-fit: cover;
             }
 
