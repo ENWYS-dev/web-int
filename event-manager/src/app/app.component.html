@@ -1,1 +1,8 @@
-<router-outlet *ngIf="this.loaded"></router-outlet>
+<ng-container *ngIf="this.loaded">
+    <app-nav></app-nav>
+
+    <div class="router">
+        <router-outlet></router-outlet>
+    </div>    
+
+</ng-container>
