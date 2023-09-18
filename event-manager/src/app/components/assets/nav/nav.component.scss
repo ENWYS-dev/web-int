@@ -1,19 +1,35 @@
 // top nav
 nav.top {
+    z-index: 255;
     width: 100%;
     height: 2rem;
     padding: .75rem 0;
-    background-color: #555555;
+    background-color: #313131;
     box-sizing: content-box;
     position: fixed;
+    box-shadow: 0 0 1rem #212121AA;
 
     display: flex;
     flex-direction: row;
 
     .left {
-        padding-left: 2rem;
+        // padding-left: 2rem;
         display: flex;
+        flex-direction: row;
         align-items: center;
+        gap: 2rem;
+
+        .nav-toggle {
+            width: 3.5rem;
+            display: flex;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #FFF;
+
+            .icon {
+                cursor: pointer;
+            }
+        }
 
         img {
             height: 75%;
@@ -102,13 +118,72 @@ nav.top {
 
 // side nav
 nav.side {
-    z-index: 253;
+    transition: width ease-in-out 500ms;
     bottom: 0;
     position: fixed;
-    width: 2rem;
-    padding: 0 .75rem;
+    width: 3.5rem;
+    padding: 2rem .75rem;
     height: calc(100% - 2rem - .75rem - .75rem);
-    background-color: aqua;
+    background-color: #666666;
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    a {
+        outline: none                   ;
+        transition: color ease-in-out 100ms;
+        display: flex;
+        flex-direction: row;
+        flex-shrink: 0;
+        color: #FFFFFF;
+        text-decoration: none;
+        justify-content: center;
+
+        mat-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2rem;
+        }
+
+        p {
+            transition: width ease 500ms,
+                        opacity ease 500ms;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            opacity: 0;
+            width: 0%;
+            align-items: center;
+
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+
+        }
+    }
+
+    a.active {
+        color: #ffffffAA;
+    }
+
+    a:focus-visible {
+        color: #b6d3ff;
+    }                                               
+}
+
+nav.side.open {
+    width: 14.5rem;
+
+    a {
+        p {
+            opacity: 1;
+            width: 100%;
+        }
+    }
 }
 
 //

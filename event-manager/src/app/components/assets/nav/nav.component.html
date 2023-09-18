@@ -1,5 +1,10 @@
 <nav class="top">
     <div class="left">
+        <div class="nav-toggle">
+            <mat-icon class="icon" (click)="this.toggleSideNav()">menu</mat-icon>
+        </div>
+        
+
         <img src="./assets/logo/Enwys_in_E&MS_weiß.svg">
     </div>
 
@@ -27,9 +32,21 @@
     </div>
 </nav>
 
-<nav class="side">
-    <a>
+<nav class="side" [ngClass]="{side: true, open: this.sideNavOpen}">
+
+    <a routerLink="/home" routerLinkActive="active">
         <mat-icon>home</mat-icon>
         <p>Home</p>
     </a>
+
+    <a routerLink="/event" routerLinkActive="active">
+        <mat-icon>stadium</mat-icon>
+        <p>Veranstalltungen</p>
+    </a>
+
+    <a routerLink="/material" routerLinkActive="active">
+        <mat-icon>speaker</mat-icon>
+        <p>Material</p>
+    </a>
+
 </nav>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import cfg from '../../../config.json'
 
 @Component({
@@ -8,13 +8,14 @@ import cfg from '../../../config.json'
 })
 export class NavComponent implements OnInit {
 
-  @Input() appComponen: any = <any>{};
+  @Output() sideNavOpenStatus = new EventEmitter<boolean>();
 
   public links = {
     'logout': cfg.domain.auth + 'logout'
   }
 
   public navProfileSettings = false;
+  public sideNavOpen = false;
   public session = {
     "username": localStorage.getItem("username"),
     "firstname": localStorage.getItem("firstname"),
@@ -31,5 +32,15 @@ export class NavComponent implements OnInit {
       
       this.navProfileSettings = true
     }
+  }
+
+  toggleSideNav() {
+    if(this.sideNavOpen) {
+      this.sideNavOpen = false
+    } else {
+      this.sideNavOpen = true
+    }
+
+    this.sideNavOpenStatus.emit(this.sideNavOpen)
   }
 }
