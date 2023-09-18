@@ -9,7 +9,7 @@ import cfg from '../config.json';
 })
 export class AuthService {
 
-  private url = cfg.api + 'auth';
+  private url = cfg.domain.api + 'auth';
   
   private httpOptions = {
     withCredentials: true
