@@ -1,5 +1,10 @@
 .router {
+    transition: margin-left ease-in-out 500ms;
     height: 100%;
     margin-top: 3.5rem;
-    padding-left: 3.5rem;
+    margin-left: 3.5rem;
+}
+
+.router.navOpen {
+    margin-left: 14.5rem;
 }
