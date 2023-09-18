@@ -1,9 +1,4 @@
-<!-- 
-    user settings
-    name
- -->
-
-<nav>
+<nav class="top">
     <div class="left">
         <img src="./assets/logo/Enwys_in_E&MS_weiß.svg">
     </div>
@@ -28,8 +23,13 @@
             </a>
         </div>
 
-        <span [ngClass]="{closeBanner: true, disabled: !this.navProfileSettings}" (click)="this.toggleProfile()">
-
-        </span>
+        <span [ngClass]="{closeBanner: true, disabled: !this.navProfileSettings}" (click)="this.toggleProfile()"></span>
     </div>
+</nav>
+
+<nav class="side">
+    <a>
+        <mat-icon>home</mat-icon>
+        <p>Home</p>
+    </a>
 </nav>

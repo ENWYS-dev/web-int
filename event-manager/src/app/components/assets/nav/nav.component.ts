@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import cfg from '../../../config.json'
 
 @Component({
-  selector: 'app-nav-top',
-  templateUrl: './nav-top.component.html',
-  styleUrls: ['./nav-top.component.scss']
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.scss']
 })
-export class NavTopComponent implements OnInit {
+export class NavComponent implements OnInit {
 
   @Input() appComponen: any = <any>{};
 

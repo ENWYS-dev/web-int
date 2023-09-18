@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavTopComponent } from './nav-top.component';
+import { NavComponent } from './nav.component';
 
-describe('NavTopComponent', () => {
-  let component: NavTopComponent;
-  let fixture: ComponentFixture<NavTopComponent>;
+describe('NavComponent', () => {
+  let component: NavComponent;
+  let fixture: ComponentFixture<NavComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NavTopComponent]
+      declarations: [NavComponent]
     });
-    fixture = TestBed.createComponent(NavTopComponent);
+    fixture = TestBed.createComponent(NavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
