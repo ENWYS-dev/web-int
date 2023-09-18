@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import cfg from '../../../config.json'
+import { Session } from 'src/app/dtos/auth/session';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,17 +12,17 @@ export class NavComponent implements OnInit {
 
   @Output() sideNavOpenStatus = new EventEmitter<boolean>();
 
+  constructor (
+    public authService: AuthService
+  ) {}
+
   public links = {
     'logout': cfg.domain.auth + 'logout'
   }
 
   public navProfileSettings = false;
   public sideNavOpen = false;
-  public session = {
-    "username": localStorage.getItem("username"),
-    "firstname": localStorage.getItem("firstname"),
-    "lastname": localStorage.getItem("lastname")
-  }
+  public session: Session = this.authService.getLocalSession();
 
   ngOnInit() {
   }
