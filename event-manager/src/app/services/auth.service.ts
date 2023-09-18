@@ -28,8 +28,32 @@ export class AuthService {
   }
 
   setLocalSession(session : Session) {
+    localStorage.setItem('loggedIn', session.loggedIn? "true":"false");
+    localStorage.setItem('loginDate', session.loginDate);
     localStorage.setItem('username', session.username);
     localStorage.setItem('firstname', session.firstname);
     localStorage.setItem('lastname', session.lastname);
+    localStorage.setItem('profilePicture', session.profilePicture);
+    localStorage.setItem('permissions', JSON.stringify(session.permissions));
+  }
+
+  getLocalSession(): Session {
+    return {
+      loggedIn: this.stringToBoolean(localStorage.getItem("loggedIn") || ''),
+      loginDate: localStorage.getItem("loginDate") || '',
+      username: localStorage.getItem("username") || '',
+      firstname: localStorage.getItem("firstname") || '',
+      lastname: localStorage.getItem("lastname") || '',
+      profilePicture: localStorage.getItem("profilePicture") || '',
+      permissions: JSON.parse(localStorage.getItem("permissions") || '')
+    }
+  }
+
+  private stringToBoolean(input: string): boolean {
+    if(input == "true") {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
