@@ -26,4 +26,10 @@ export class AuthService {
     }
     return this.httpClient.get<Session>(this.url + '/session' + typeLink, this.httpOptions);
   }
+
+  setLocalSession(session : Session) {
+    localStorage.setItem('username', session.username);
+    localStorage.setItem('firstname', session.firstname);
+    localStorage.setItem('lastnamename', session.lastname);
+  }
 }
