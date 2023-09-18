@@ -1,7 +1,7 @@
 <ng-container *ngIf="this.loaded">
-    <app-nav></app-nav>
+    <app-nav (sideNavOpenStatus)="this.sideNavToggle($event)"></app-nav>
 
-    <div class="router">
+    <div [ngClass]="{router: true, navOpen: this.sideNavOpen}">
         <router-outlet></router-outlet>
     </div>    
 
