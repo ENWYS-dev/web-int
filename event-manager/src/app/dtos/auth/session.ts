@@ -4,6 +4,8 @@ export class Session {
         public username: string,
         public firstname: string,
         public lastname: string,
-        public loginDate: string
+        public loginDate: string,
+        public profilePicture: string,
+        public permissions: Array<String>
     ) {}
 }
