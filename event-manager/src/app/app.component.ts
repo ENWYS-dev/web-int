@@ -20,6 +20,10 @@ export class AppComponent implements OnInit {
   ){}
 
   ngOnInit() {
+    this.checkUserLogin();
+  }
+
+  checkUserLogin() {
     this.authService.session().subscribe(
       (session: Session) => {
 
@@ -37,9 +41,5 @@ export class AppComponent implements OnInit {
 
       }
     )
-  }
-
-  checkUserLogin() {
-    
   }
 }
