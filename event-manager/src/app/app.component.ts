@@ -24,10 +24,10 @@ export class AppComponent implements OnInit {
   }
 
   checkUserLogin() {
-    this.authService.session().subscribe(
-      (session: Session) => {
-
-        if(session.loggedIn) {
+    this.authService.session('data').subscribe(
+      (sessionRequest: Session) => {
+        this.authService.setLocalSession(sessionRequest);
+        if(sessionRequest.loggedIn) {
           this.loggedIn = true;
         } else {
           this.router.data.subscribe(
