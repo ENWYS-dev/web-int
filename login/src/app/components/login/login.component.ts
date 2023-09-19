@@ -51,9 +51,9 @@ export class LoginComponent implements OnInit {
           if(loginReturn.success) {
             if(this.cookieService.check("SESSION")) {
               this.cookieService.delete("SESSION");
-              this.cookieService.set("SESSION", loginReturn.sessionId, 120, undefined, "." + cfg.rootDomain, false, 'None');
+              this.cookieService.set("SESSION", loginReturn.sessionId, 120, undefined, "." + cfg.rootDomain);
             } else {
-              this.cookieService.set("SESSION", loginReturn.sessionId, 120, undefined, "." + cfg.rootDomain, false, 'None');
+              this.cookieService.set("SESSION", loginReturn.sessionId, 120, undefined, "." + cfg.rootDomain);
             }
             
             this.route.navigateByUrl('/redirect?link=' + loginReturn.redirect)
