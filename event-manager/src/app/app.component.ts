@@ -26,9 +26,9 @@ export class AppComponent implements OnInit {
   checkUserLogin() {
     this.authService.session('data').subscribe(
       async (sessionRequest: Session) => {
-        await this.authService.setLocalSession(sessionRequest);
-        this.loaded = true;
-        if(sessionRequest.loggedIn) {
+        if(sessionRequest.loggedIn && sessionRequest.permissions.includes('evm')) {
+          await this.authService.setLocalSession(sessionRequest);
+          this.loaded = true;
           this.loggedIn = true;
         } else {
           window.location.href = cfg.domain.auth;
