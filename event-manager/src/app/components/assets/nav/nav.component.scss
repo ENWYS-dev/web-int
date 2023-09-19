@@ -132,7 +132,7 @@ nav.side {
     gap: 1rem;
 
     a {
-        outline: none                   ;
+        outline: none;
         transition: color ease-in-out 100ms;
         display: flex;
         flex-direction: row;
@@ -150,7 +150,8 @@ nav.side {
 
         p {
             transition: width ease 500ms,
-                        opacity ease 500ms;
+                        opacity ease 500ms,
+                        padding-left ease 500ms;
             margin: 0;
             width: 100%;
             height: 100%;
@@ -158,6 +159,7 @@ nav.side {
             opacity: 0;
             width: 0%;
             align-items: center;
+            padding-left: 0rem;
 
             text-overflow: ellipsis;
             overflow: hidden;
@@ -182,6 +184,7 @@ nav.side.open {
         p {
             opacity: 1;
             width: 100%;
+            padding-left: .5rem;
         }
     }
 }
@@ -199,4 +202,61 @@ nav.side.open {
 
 .disabled {
     display: none !important;
+}
+
+// side nav 600px width
+// top 300px width
+
+// mobile
+@media screen and (max-width: 600px) {
+    nav.top {
+        .left {
+            .nav-toggle {
+                display: none;
+            }
+
+            img {
+                padding-left: 6vw;
+            }
+        }
+    }
+    nav.side {
+        width: 100% !important;
+        padding: 1rem 1rem 1.5rem 1rem;
+        height: fit-content;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15vw;
+
+        a {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+            mat-icon {
+                font-size: 2rem;
+                height: 2rem;
+            }
+    
+            p {
+                height: fit-content;
+                font-size: .5rem;
+                opacity: 1;
+                width: fit-content !important;
+                max-width: 3rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    nav.top {
+        .right {
+            .profile {
+                p {
+                    display: none;
+                }
+            }
+        }
+    }
 }
