@@ -8,3 +8,9 @@
 .router.navOpen {
     margin-left: 14.5rem;
 }
+
+@media screen and (max-width: 600px) {
+    .router {
+        margin-left: 0 !important;
+    }
+}
