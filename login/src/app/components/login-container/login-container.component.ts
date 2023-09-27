@@ -10,16 +10,17 @@ export class LoginContainerComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
-  loginC = false;
-  redirectC = false;
+  componentLoad = '';
 
   ngOnInit() {
     this.route.data.subscribe(
       data => {
         if(data["type"] == "redirect") {
-          this.redirectC = true;
+          this.componentLoad = 'redirect';
+        } if (data["type"] == "password-reset") {
+          this.componentLoad = 'password-reset';
         } else {
-          this.loginC = true;
+          this.componentLoad = 'login';
         }
       }
     );

@@ -4,8 +4,9 @@
     </div>
     <div class="content">
         <div class="module">
-            <app-login *ngIf="loginC"></app-login>
-            <app-redirect *ngIf="redirectC"></app-redirect>
+            <app-login *ngIf="componentLoad == 'login'"></app-login>
+            <app-redirect *ngIf="componentLoad == 'redirect'"></app-redirect>
+            <app-password-reset *ngIf="componentLoad == 'password-reset'"></app-password-reset>
         </div>
     </div>
 </div>
