@@ -9,6 +9,8 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         background-color: #014f86;
+        background-image: url('/assets/images/RC_Ungarn.jpg');
+        background-size: cover;
     
         .logo {
             display: flex;
@@ -19,6 +21,7 @@
                 min-width: 10rem;
                 width: 20vw;
                 max-width: 20rem;
+                filter: drop-shadow(.1rem .1rem .5rem #212121AA);
             }
         }
     
