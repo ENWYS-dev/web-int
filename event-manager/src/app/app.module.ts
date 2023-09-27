@@ -9,13 +9,15 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './components/assets/nav/nav.component';
+import { MaterialOverviewComponent } from './components/material/material-overview/material-overview.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    MaterialOverviewComponent,
   ],
   imports: [
     BrowserModule,
