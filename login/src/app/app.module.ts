@@ -11,6 +11,7 @@ import { LoginContainerComponent } from './components/login-container/login-cont
 import { CookieService } from 'ngx-cookie-service';
 import { RedirectComponent } from './components/redirect/redirect.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     LoginComponent,
     LoginContainerComponent,
     RedirectComponent,
-    LogoutComponent
+    LogoutComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,

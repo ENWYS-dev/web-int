@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginContainerComponent, data :{ type: 'login' } },
   { path: 'logout', component: LogoutComponent },
-  { path: 'redirect', component: LoginContainerComponent, data :{ type: 'redirect' } }
+  { path: 'redirect', component: LoginContainerComponent, data :{ type: 'redirect' } },
+  { path: 'password-reset', component: LoginContainerComponent, data :{ type: 'password-reset' } }
 ];
 
 @NgModule({
