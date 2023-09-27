@@ -1,7 +1,7 @@
 h3 {
     font-weight: 900;
     color: #323232;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 .login {
@@ -17,8 +17,12 @@ h3 {
         display: flex;
         flex-direction: column;
 
+        p {
+            font-size: .9rem;
+        }
+
         span {
-            min-width: 20rem;
+            min-width: 20vw;
             width: 100%;
             display: flex;
             box-sizing: border-box;
@@ -49,6 +53,7 @@ h3 {
         }
 
         a {
+            font-size: .8rem;
             color: #0295fcBB;
         }
     }
@@ -106,5 +111,11 @@ h3 {
         border: 0;
         background-color: transparent;
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    h3 {
+        font-size: 1.5rem;
     }
 }
