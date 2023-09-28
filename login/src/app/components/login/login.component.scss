@@ -19,6 +19,7 @@ h3 {
 
         p {
             font-size: .9rem;
+            color: #32323250;
         }
 
         span {
@@ -42,9 +43,16 @@ h3 {
             }
 
             .material-symbols-outlined {
+                font-size: 1.4rem;
                 width: fit-content;
                 display: flex;
                 cursor: pointer;
+                color: #32323250;
+                transition: color ease-in-out 50ms;
+            }
+
+            .material-symbols-outlined:active {
+                color: #323232FF;
             }
         }
 
@@ -117,5 +125,27 @@ h3 {
 @media screen and (max-width: 1400px) {
     h3 {
         font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h3 {
+        font-size: 7.5vw;
+    }
+
+    .login {
+        width: 100%;
+        margin-top: 1rem;
+    
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    
+        label {    
+            a {
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
+        }
     }
 }

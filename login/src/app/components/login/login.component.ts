@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Login } from 'src/app/dtos/login';
 import { CookieService } from 'ngx-cookie-service';
+import * as CryptoJS from 'crypto-js';
 import { LoginReturn } from 'src/app/dtos/login-retrun';
 import cfg from '../../config.json';
 import { Session } from 'src/app/dtos/session';
@@ -43,6 +44,16 @@ export class LoginComponent implements OnInit {
   loginUser() {
     this.loginError = '';
     if(this.login.get("username")?.value && this.login.get("password")?.value) {
+
+      // let encrypted = CryptoJS.AES.encrypt(
+      //   JSON.stringify(CryptoJS.enc.Utf8.parse(this.login.controls.password.value || '')),
+      //   this.login.controls.username.value || '',
+      //   {
+      //     iv: CryptoJS.enc.Hex.parse('00112233445566778899aabbccddeeff'),
+      //     mode: CryptoJS.mode.CBC,
+      //     padding: CryptoJS.pad.Pkcs7
+      //   }).toString(); 
+
       const auth: Login = new Login(this.login.controls.username.value || '', this.login.controls.password.value || '');
 
       this.authService.login(auth).subscribe(

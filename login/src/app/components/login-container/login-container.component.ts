@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-container',
@@ -8,21 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LoginContainerComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {}
-
-  componentLoad = '';
+  constructor(private route: ActivatedRoute, public router: Router) {}
 
   ngOnInit() {
-    this.route.data.subscribe(
-      data => {
-        if(data["type"] == "redirect") {
-          this.componentLoad = 'redirect';
-        } if (data["type"] == "password-reset") {
-          this.componentLoad = 'password-reset';
-        } else {
-          this.componentLoad = 'login';
-        }
-      }
-    );
   }
 }

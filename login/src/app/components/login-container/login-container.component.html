@@ -4,9 +4,11 @@
     </div>
     <div class="content">
         <div class="module">
-            <app-login *ngIf="componentLoad == 'login'"></app-login>
-            <app-redirect *ngIf="componentLoad == 'redirect'"></app-redirect>
-            <app-password-reset *ngIf="componentLoad == 'password-reset'"></app-password-reset>
+            <app-login *ngIf="this.router.url.split('?')[0] == '/login'"></app-login>
+            <app-logout *ngIf="this.router.url.split('?')[0] == '/logout'"></app-logout>
+            <app-redirect *ngIf="this.router.url.split('?')[0] == '/redirect'"></app-redirect>
+            <app-redirect *ngIf="this.router.url.split('?')[0] == '/redirect'"></app-redirect>
+            <app-password-reset *ngIf="this.router.url.split('?')[0] == '/password-reset'"></app-password-reset>
         </div>
     </div>
 </div>
