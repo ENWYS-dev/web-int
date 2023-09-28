@@ -41,12 +41,7 @@ export class AuthService {
   redirect(type: string = '') : Observable<Redirect> {
     var typeLink = '?link=intranet';
     if(type) {
-      if(type == "auth" || "login") {
-        typeLink = '?link=intranet';
-      } else {
-        typeLink = '?link=' + type;
-      }
-      
+      typeLink = '?link=' + type;
     }
     return this.httpClient.get<Redirect>(this.url + '/redirect' + typeLink, this.httpOptions);
   }
