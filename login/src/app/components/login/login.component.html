@@ -4,7 +4,7 @@
     <label>
         <p>Benutzername</p>
         <span>
-            <input type="text" formControlName="username">
+            <input type="text" formControlName="username" [disabled]="loginProcess">
         </span>
         
     </label>
@@ -12,7 +12,7 @@
     <label>
         <p>Passwort</p>
         <span>
-            <input [type]="this.loginPasswordVisibility ? 'text' : 'password'" id="loginPassword" formControlName="password">
+            <input [type]="this.loginPasswordVisibility ? 'text' : 'password'" id="loginPassword" formControlName="password" [disabled]="loginProcess">
             <i *ngIf="this.loginPasswordVisibility" class="material-symbols-outlined" (click)="this.passwordChangeType()">
                 visibility
             </i>
@@ -26,7 +26,7 @@
     <p class="error">{{ this.loginError }}</p>
 
     <div class="btn">
-        <input type="submit" (click)="loginUser()" value="Login">
+        <input type="submit" (click)="loginUser()" value="Login" [disabled]="loginProcess">
     </div>
 </form>
 

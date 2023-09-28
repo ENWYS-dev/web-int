@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   loginPasswordVisibility = false;
   loginError = '';
   loggedIn = false;
+  loginProcess = false;
 
   ngOnInit() {
     this.authService.session().subscribe(
@@ -42,6 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
+    this.loginProcess = true;
     this.loginError = '';
     if(this.login.get("username")?.value && this.login.get("password")?.value) {
 
@@ -68,8 +70,10 @@ export class LoginComponent implements OnInit {
             }
             
             this.route.navigateByUrl('/redirect?link=' + loginReturn.redirect)
+            this.loginProcess = false;
           } else {
             this.loginError = loginReturn.error;
+            this.loginProcess = false;
           }
 
         }
