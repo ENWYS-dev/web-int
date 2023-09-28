@@ -10,13 +10,13 @@
 
     <div class="right">
         <span class="profile" (click)="this.toggleProfile()">
-            <img src="https://picsum.photos/300/300">
+            <img [src]="session.profilePicture">
             <p>{{ session.username }}</p>
         </span>
 
         <div [ngClass]="{profileSettings: true, disabled: !this.navProfileSettings}">
             <div class="header">
-                <img src="https://picsum.photos/300/300">
+                <img [src]="session.profilePicture">
                 <div class="text">
                     <h2>{{ session.username }}</h2>
                 </div>
