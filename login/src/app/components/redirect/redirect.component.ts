@@ -20,12 +20,10 @@ export class RedirectComponent implements OnInit {
   ngOnInit() {
     this.router.queryParams.subscribe(
       parameter => {
-        this.authService.redirect(parameter["type"]).subscribe(
-          (redirect: Redirect) => {
+        console.log(parameter)
+        this.authService.redirect(parameter["link"]).subscribe(
+          (redirect: any) => {
             window.location.href = redirect.url;
-          },
-          (error) => {
-            this.route.navigateByUrl("/login");
           }
             
         )
